@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
-import { emphasize, styled } from '@material-ui/core/styles';
-import Collapse from '@material-ui/core/Collapse';
-import type { SnackbarClassKey } from '@material-ui/core';
+import { emphasize, styled } from '@mui/material/styles';
+import Collapse from '@mui/material/Collapse';
+import type { SnackbarClassKey } from '@mui/material';
 import SnackbarContent from '../SnackbarContent';
 import { getTransitionDirection } from './SnackbarItem.util';
 import { REASONS, objectMerge, DEFAULTS, transformer } from '../utils/constants';
@@ -27,7 +27,7 @@ const classes = {
 };
 
 const StyledSnackbar = styled(Snackbar)(({ theme }) => {
-    const mode = theme.palette.mode || theme.palette.type;
+    const mode = theme.palette.mode || theme.palette.mode;
     const backgroundColor = emphasize(theme.palette.background.default, mode === 'light' ? 0.8 : 0.98);
 
     return {

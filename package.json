@@ -21,14 +21,15 @@
         "prebuild": "npm run docs",
         "prepublishOnly": "npm run build",
         "docs": "rimraf typedoc.json && typedoc --tsconfig",
-        "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "ready": "npm ci && npm run build"
     },
     "peerDependencies": {
         "react": "^16.8.0 || ^17.0.0",
         "react-dom": "^16.8.0 || ^17.0.0",
         "@emotion/react": "^11.4.1",
         "@emotion/styled": "^11.3.0",
-        "@material-ui/core": "^5.0.0-beta.4"
+        "@mui/material": "^5.0.0-rc.1"
     },
     "peerDependenciesMeta": {
         "@emotion/react": {

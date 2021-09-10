@@ -1,14 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
-import { styled } from '@material-ui/core/styles';
+import { styled } from '@mui/material/styles';
 import { SNACKBAR_INDENTS } from './utils/constants';
 import { SnackbarProviderProps } from '.';
 
 const collapse = {
     // Material-UI 4.12.x and above uses MuiCollapse-root; earlier versions use
     // Mui-Collapse-container.  https://github.com/mui-org/material-ui/pull/24084
-    container: '& > .MuiCollapse-container, & > .MuiCollapse-root',
-    wrapper: '& > .MuiCollapse-container > .MuiCollapse-wrapper, & > .MuiCollapse-root > .MuiCollapse-wrapper',
+    container: '& > .MuiCollapse-root, & > .MuiCollapse-root',
+    wrapper: '& > .MuiCollapse-root > .MuiCollapse-wrapper, & > .MuiCollapse-root > .MuiCollapse-wrapper',
 };
 
 const xsWidthMargin = 16;
@@ -45,7 +45,7 @@ const Root = styled('div')(({ theme }) => ({
             transition: 'padding 300ms ease 0ms',
         },
         maxWidth: `calc(100% - ${SNACKBAR_INDENTS.view.default * 2}px)`,
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             width: '100%',
             maxWidth: `calc(100% - ${xsWidthMargin * 2}px)`,
         },
@@ -68,7 +68,7 @@ const Root = styled('div')(({ theme }) => ({
         [theme.breakpoints.up('sm')]: {
             alignItems: 'flex-start',
         },
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             left: `${xsWidthMargin}px`,
         },
     },
@@ -77,7 +77,7 @@ const Root = styled('div')(({ theme }) => ({
         [theme.breakpoints.up('sm')]: {
             alignItems: 'flex-end',
         },
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             right: `${xsWidthMargin}px`,
         },
     },
